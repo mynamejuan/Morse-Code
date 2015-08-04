@@ -1,0 +1,52 @@
+
+	Name:			Juan Davila
+	Class:		1213-001
+	Program:		Morse Code
+	Purpose:		Translates Strings into Morse code.
+*/
+
+
+import java.util.Scanner;
+
+public class Morse
+{
+
+public static void main(String[] args)
+{
+	String userName;
+	
+	// Initializing translate & scanner 
+	Translate trans = new Translate();
+	Scanner keyboard = new Scanner(System.in);
+	
+	// Asks user for input
+	System.out.println("What is your name: ");
+	userName = keyboard.nextLine();
+	
+	// Asks for user input string
+	System.out.println("Please enter a sentence to be translated into morse code:");
+	String i = keyboard.nextLine();
+	
+	// Keep going until "stop" is entered
+	while(!i.equals("stop"))
+	{
+		// Translates the user's String sentence
+		System.out.println(trans.translate(i));
+		System.out.println();
+		
+		// Loops again until the phrase "stop" is entered
+		System.out.println("Type 'stop' to end program if you want to end the program.");
+		System.out.println("Please enter a sentence to be translated into morse code:");
+		i = keyboard.nextLine();
+		System.out.println();
+	}
+
+	if(i.equals("stop"))
+	{
+		
+		System.out.println("Goodbye! " + userName);
+	}	
+
+}
+
+}
